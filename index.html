@@ -17,9 +17,9 @@
               <label for="Binário"><b>Binário:</b></label>
           </legend>
           <br>
-          <input id="Binário" type="Binário" name="Binário">
+          <input id="Binario" type="Binario" name="Binário">
           <br>
-          <legend>
+        
           <br>
 
           <legend>
@@ -29,7 +29,7 @@
           <input id="Decimal" type="Decimal" name="Decimal">
           <br>
 
-          
+        <button type="button" onclick="converter()">Ver resultado</button>
           
       </form>
       
@@ -46,7 +46,7 @@
         <br>
         <br>
         <br>
-            <label><buttom>Ver resultado</buttom></label>
+            
         </legend>
         <legend>
             
@@ -55,5 +55,18 @@
 </footer>
     <button onclick="location.assign('sobre.html')">Sobre nós</button>
     <button onclick="location.assign('contato.html')">Contato</button>
+
+    <script>
+      function converter() {
+        let binario = document.getElementById('Binario').value;
+        if (/^[01]+$/.test(binario)) {
+          let decimal = parseInt(binario, 2);
+          document.getElementById('Decimal').value = decimal;
+        } else {
+          alert("Por favor, insira um número binário válido.");
+          document.getElementById('Binario').value = "";
+        }
+      }
+    </script>
   </body>
 </html>
